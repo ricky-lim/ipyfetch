@@ -26,13 +26,16 @@ For a development installation (requires npm),
 
 When actively developing your extension, build Jupyter Lab with the command:
 
-    $ jupyter lab --watch
+    make jlab    
     
+Actively test on voila:
+
+    make voila
     
 After making JavaScript code changes:
 
-    cd js
-    npm run build
+    make js
+    
     
 This takes a minute or so to get started, but then automatically rebuilds JupyterLab when your javascript changes.
 
