@@ -1,5 +1,5 @@
 import ipywidgets as widgets
-from traitlets import Unicode, Dict
+from traitlets import Unicode, Dict, Bool
 
 
 @widgets.register
@@ -15,5 +15,4 @@ class Fetch(widgets.DOMWidget):
 
     url = Unicode('').tag(sync=True)
     value = Dict({}).tag(sync=True)
-    options = Dict({}).tag(sync=True)
-
+    shared_origin = Bool(False).tag(sync=True)

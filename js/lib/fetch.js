@@ -22,10 +22,18 @@ var FetchView = widgets.DOMWidgetView.extend({
   },
 
   render: function () {
+    let options;
+    if (this.model.get('shared_origin')) {
+      options = {
+        mode: 'no-cors',
+        credentials: 'same-origin',
+        headers: new Headers({'Access-Control-Allow-Origin': '*'})
+      };
+    }
     const request = async () => {
       const response = await fetch(
         this.model.get('url'),
-        this.model.get('options')
+        options
       );
       const result = await response.json();
       console.log(result);
