@@ -19,10 +19,8 @@ For a development installation (requires npm),
 
     $ git clone https://github.com//ipyfetch.git
     $ cd ipyfetch
-    $ pip install -e .
-    $ jupyter nbextension install --py --symlink --sys-prefix ipyfetch
-    $ jupyter nbextension enable --py --sys-prefix ipyfetch
-    $ jupyter labextension install js
+    $ conda env create -f environment.yaml -n ipyfetch-env
+    $ conda activate ipyfetch-env
 
 When actively developing your extension, build Jupyter Lab with the command:
 

@@ -16,7 +16,7 @@ Update `js/package.json` with new npm package version
 
 ```
 # clean out the `dist` and `node_modules` directories
-git clean -fdx
+make clean
 npm install
 npm publish
 ```

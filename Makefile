@@ -1,5 +1,14 @@
 .PHONY: voila lab js
 
+## Development
+develop:
+	pip install -e .
+	jupyter nbextension install --py --symlink --sys-prefix ipyfetch
+	jupyter nbextension enable --py --sys-prefix ipyfetch
+	jupyter labextension install js
+	jupyter labextension install @jupyter-widgets/jupyterlab-manager
+	python -m ipykernel install --user --name ipyfetch-env --display-name "ipyfetch-env"
+
 ## Run voila
 voila:
 	voila --autoreload=True --enable_nbextensions=True examples/ipyfetch.ipynb
@@ -11,6 +20,11 @@ jlab:
 ## Develop js
 js:
 	cd js && npm run build
+
+## Clean
+clean:
+	rm -rf js/dist
+	rm -rf js/node_modules
 
 #################################################################################
 # Self Documenting Commands                                                     #
