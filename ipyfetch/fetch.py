@@ -16,3 +16,13 @@ class Fetch(widgets.DOMWidget):
     url = Unicode('').tag(sync=True)
     value = Dict({}).tag(sync=True)
     shared_origin = Bool(False).tag(sync=True)
+
+    @classmethod
+    def create(cls, url, container):
+        f = cls(url=url)
+
+        def on_fetch(change, *args, **kwargs):
+            container['result'] = change['new']
+
+        f.observe(on_fetch, "value")
+        return f

@@ -152,7 +152,7 @@ setup_args = dict(
     },
     author='Ricky Lim',
     author_email='rlim.email@gmail.com',
-    url='https://github.com//ipyfetch',
+    url='https://github.com/ricky-lim/ipyfetch',
     keywords=[
         'ipython',
         'jupyter',

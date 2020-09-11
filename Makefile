@@ -1,4 +1,5 @@
 .PHONY: voila lab js
+NB_PATH := examples/ipyfetch.ipynb
 
 ## Development
 develop:
@@ -9,9 +10,9 @@ develop:
 	jupyter labextension install @jupyter-widgets/jupyterlab-manager
 	python -m ipykernel install --user --name ipyfetch-env --display-name "ipyfetch-env"
 
-## Run voila
+## Run voila NB_PATH=<examples/ipyfetch.ipynb>
 voila:
-	voila --autoreload=True --enable_nbextensions=True examples/ipyfetch.ipynb
+	voila --autoreload=True --enable_nbextensions=True ${NB_PATH}
 
 ## Develop on jupyter lab
 jlab:
