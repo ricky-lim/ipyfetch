@@ -21,6 +21,7 @@ For a development installation (requires npm),
     $ cd ipyfetch
     $ conda env create -f environment.yaml -n ipyfetch-env
     $ conda activate ipyfetch-env
+    $ make develop
 
 When actively developing your extension, build Jupyter Lab with the command:
 
