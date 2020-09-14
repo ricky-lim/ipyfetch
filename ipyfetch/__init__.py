@@ -1,6 +1,6 @@
 from ._version import version_info, __version__
 
-from .fetch import Fetch
+from .fetch import Fetch, create_on_fetch
 
 
 def _jupyter_nbextension_paths():
@@ -20,9 +20,11 @@ def _jupyter_nbextension_paths():
     require: Path to importable AMD Javascript module inside the
         <jupyter path>/nbextensions/<dest> directory
     """
-    return [{
-        'section': 'notebook',
-        'src': 'static',
-        'dest': 'ipyfetch',
-        'require': 'ipyfetch/extension'
-    }]
+    return [
+        {
+            "section": "notebook",
+            "src": "static",
+            "dest": "ipyfetch",
+            "require": "ipyfetch/extension",
+        }
+    ]
