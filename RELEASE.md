@@ -1,6 +1,7 @@
 - To release a new version of ipyfetch on PyPI:
 
 Update _version.py (set release version, remove 'dev')
+Update version also in `js/package.json`
 git add the _version.py file and git commit
 `python setup.py sdist bdist_wheel`
 `twine upload dist/*`
